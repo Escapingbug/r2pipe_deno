@@ -7,6 +7,8 @@ Deno.test("radare2 basic", async () => {
     let ret = await r2.cmd("aaaa");
     assertEquals(ret, "");
 
+    await r2.cmdJson("aaaa");
+
     let retJson = await r2.cmdJson("pdf");
     await r2.quit();
 });

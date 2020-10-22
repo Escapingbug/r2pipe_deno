@@ -85,6 +85,9 @@ export class R2Pipe {
         }
 
         const outStr = await this.cmd(command);
+        if (outStr.length === 0) {
+            return {};
+        }
         return JSON.parse(outStr);
     }
 
